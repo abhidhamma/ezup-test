@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +14,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["./src/other/config/*"],
+      "@constant/*": ["./src/other/constant/*"],
+      "@util/*": ["./src/other/util/*"],
+      "@api/*": ["./src/service/api/*"],
+      "@hook/*": ["./src/service/hook/*"],
+      "@state/*": ["./src/service/state/*"],
+      "@asset/*": ["src/view/asset/*"],
+      "@components/*": ["src/view/components/*"],
+      "@pages/*": ["src/view/pages/*"],
+      "@router/*": ["src/view/router/*"],
+      "@app/*": ["src/view/app/*"],
+      "@style/*": ["src/view/style/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
