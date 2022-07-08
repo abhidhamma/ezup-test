@@ -7,7 +7,7 @@ export const MainTab = () => {
   return (
     <div
       className={
-        'grid grid-flow-col border-MainTabBorder border-b justify-start row-span-1 grid-cols-[repeat(10,fit-content(300px))]'
+        'grid grid-flow-col border-TabBorder border-b justify-start row-span-1 grid-cols-[repeat(10,fit-content(300px))]'
       }
     >
       {mainTab.map(({ tabName, isOpen }) => (

@@ -29,12 +29,12 @@ export const SingleMainTab = ({ tabName, isOpen }: any) => {
     })
   }
 
-  const backgroundColor = isOpen ? 'bg-white' : 'bg-MainTab'
+  const backgroundColor = isOpen ? 'bg-white' : 'bg-Tab'
   const border = isOpen ? 'border border-b-0' : 'border'
   return (
     <>
       <div
-        className={`grid grid-flow-col justify-center px-1 border-MainTabBorder ${border} ${backgroundColor}`}
+        className={`grid grid-flow-col justify-center px-1 border-TabBorder ${border} ${backgroundColor}`}
         onClick={selectTab}
       >
         {tabName}

@@ -1,26 +1,21 @@
-import { ISubTab, subTabAtom } from '@state/subTab'
-import { useSetRecoilState } from 'recoil'
+import { ISubTab } from '@state/subTab'
 
-export const SingleSubTab = ({ tabName, isOpen }: any) => {
-  const setSubTab = useSetRecoilState(subTabAtom)
-
+export const SingleSubTab = ({ tabName, isOpen, setTabs }: any) => {
   const selectTab = () => {
-    setSubTab((tabs: ISubTab[]): ISubTab[] =>
+    setTabs((tabs: ISubTab[]): ISubTab[] =>
       tabs.map((tab) =>
-        tab.tabName === tabName
-          ? { tabName, isOpen: true }
-          : { tabName: tab.tabName, isOpen: false }
+        tab.tabName === tabName ? { ...tab, isOpen: true } : { ...tab, isOpen: false }
       )
     )
   }
 
-  const backgroundColor = isOpen ? 'bg-white' : 'bg-MainTab'
+  const backgroundColor = isOpen ? 'bg-white' : 'bg-Tab'
   const border = isOpen ? 'border border-b-0' : 'border'
 
   return (
     <>
       <div
-        className={`grid justify-center  border-SubTabBorder border ${border} ${backgroundColor}`}
+        className={`grid justify-center  border-SoftTabBorder border ${border} ${backgroundColor}`}
         onClick={selectTab}
       >
         {tabName}
