@@ -25,8 +25,7 @@
       "@state/*": ["./src/service/state/*"],
       "@asset/*": ["src/view/asset/*"],
       "@components/*": ["src/view/components/*"],
-      "@pages/*": ["src/view/pages/*"],
-      "@router/*": ["src/view/router/*"],
+      "@routes/*": ["src/view/routes/*"],
       "@app/*": ["src/view/app/*"],
       "@style/*": ["src/view/style/*"]
     }

@@ -1,11 +1,14 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import { mainTabAtom } from '@state/mainTab'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
+import { routeMap } from 'src/others/constant/routeMap'
 
 export const SingleMenu = ({ name, childrenName }: any) => {
   const [mainTab, setMainTab] = useRecoilState(mainTabAtom)
   const [open, setOpen] = useState(true)
+  const navigate = useNavigate()
 
   const toggle = () => {
     setOpen((open) => !open)
@@ -26,6 +29,7 @@ export const SingleMenu = ({ name, childrenName }: any) => {
         )
       })
     }
+    navigate(`${routeMap[childName]}`)
   }
 
   const checkDuplicateTab = (childName: string) => {

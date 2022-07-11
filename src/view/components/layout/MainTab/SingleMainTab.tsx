@@ -1,12 +1,14 @@
 import { IMainTab, mainTabAtom } from '@state/mainTab'
 import { SyntheticEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil'
+import { routeMap } from 'src/others/constant/routeMap'
 
 export const SingleMainTab = ({ tabName, isOpen }: any) => {
   const setMainTab = useSetRecoilState(mainTabAtom)
+  const navigate = useNavigate()
 
   const selectTab = () => {
-    console.log('selectTab')
     setMainTab((tabs: IMainTab[]): IMainTab[] =>
       tabs.map((tab) =>
         tab.tabName === tabName
@@ -14,19 +16,24 @@ export const SingleMainTab = ({ tabName, isOpen }: any) => {
           : { tabName: tab.tabName, isOpen: false }
       )
     )
+    navigate(`${routeMap[tabName]}`)
   }
 
   const removeTab = (e: SyntheticEvent) => {
     e.stopPropagation()
 
+    let lastTabName = 'home'
     setMainTab((tabs: IMainTab[]): IMainTab[] => {
       const removedTabs = tabs.filter((tab) => tab.tabName !== tabName)
       const lastIndex = removedTabs.length - 1
+      lastTabName = removedTabs[lastIndex].tabName
 
       return removedTabs.map((tab, index) =>
         index === lastIndex ? { tabName: tab.tabName, isOpen: true } : tab
       )
     })
+
+    navigate(`${routeMap[lastTabName]}`)
   }
 
   const backgroundColor = isOpen ? 'bg-white' : 'bg-Tab'

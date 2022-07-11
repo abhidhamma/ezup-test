@@ -1,11 +1,8 @@
-import { SubTab } from '@components/common/Panel/SubTab/SubTab'
+import { SubTab } from '@components/common/SubTab/SubTab'
 import { ITabs } from 'src/others/type'
-import { ProductList } from './ProductList'
 
 export const ProductManager = () => {
-  const productManagerTabs: ITabs[] = [
-    { tabName: '전체상품', isOpen: true, panel: <ProductList /> },
-  ]
+  const productManagerTabs: ITabs[] = [{ tabName: '전체상품', isOpen: true }]
   return (
     <>
       <div className='grid grid-rows-[100px_1fr]'>
