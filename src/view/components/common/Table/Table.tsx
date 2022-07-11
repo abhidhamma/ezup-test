@@ -9,12 +9,12 @@ export const Table = () => {
   }
   return (
     <>
-      <div className='grid bg-white'>
-        <div className='grid auto-rows-min h-[648px] overflow-x-scroll overflow-y-scroll'>
-          <Header />
-          {makeRows()}
-        </div>
+      {/* <div className='grid bg-white'> */}
+      <div className='grid h-[775px] overflow-x-scroll overflow-y-scroll'>
+        <Header />
+        {makeRows()}
       </div>
+      {/* </div> */}
     </>
   )
 }

@@ -12,7 +12,9 @@ export const Preference = () => {
     <>
       <div className='grid grid-rows-[25px_1fr] m-1 border-TabBorder border-t-0'>
         <SubTab initialTabs={preferenceTabs} />
-        <Outlet />
+        <div className='bg-SoftTab border-SoftTabBorder border border-t-0 p-1'>
+          <Outlet />
+        </div>
       </div>
     </>
   )
