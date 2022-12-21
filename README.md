@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+![carbon (1)](https://user-images.githubusercontent.com/57596218/208799088-fff1f50c-c62e-4e9e-8e72-487d1f76b30e.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Redux
 
-## Available Scripts
+redux toolkit으로 탭의 기능을 담당하는 slice를 만들고
 
-In the project directory, you can run:
+activateMainTab - 탭을 클릭했을때 활성화하는 액션을 실행하는 리듀서
 
-### `npm start`
+addMainTab - 왼쪽의 탭을 더블클릭하면 탭이 추가되는 액션을 실행하는 리듀서
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+removeMainTab - 탭을 삭제하는 리듀서
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+changeMainTabOrder - 탭의 순서를 바꾸는 리듀서
 
-### `npm test`
+를 만들었습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+![carbon (2)](https://user-images.githubusercontent.com/57596218/208799108-13506eb3-9f26-440f-8583-a79a1e5e5f27.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+탭이 존재하는 엘리먼트와 각 탭에 드래그앤 드롭을 구현하고 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+필요한곳에 slice에서 작성한 reducer를 실행할 수 있는 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+action object를 담은 dispatch를 실행하도록 배치하였습니다.
